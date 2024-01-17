@@ -394,7 +394,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">MLOps with vetiver</h1>
-  <p class="subtitle">University of Wisconsin-Madison, 2024</p>
+  <p class="subtitle">January 2024</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -428,9 +428,24 @@ Isabel Zimmerman, Posit PBC
 <li><p>Data analyst 📈</p></li>
 <li><p>Software engineer 🛠️</p></li>
 </ul>
+<aside class="notes">
+<p>or other data practitioner</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="mlops-is" class="title-slide slide level1 center">
 <h1>MLOps is…</h1>
+<div class="fragment">
+<p><em>Machine Learning Operations</em></p>
 <aside class="notes">
 <p>the name of this talk is MLOps with vetiver, but you might not know what MLOps is, or you might have heard of MLOps but it came with a chart of the MLOps landscape that looks sort of like…</p>
 <style type="text/css">
@@ -444,13 +459,18 @@ Isabel Zimmerman, Posit PBC
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</div>
 </section>
 
 <section id="mlops-is-1" class="title-slide slide level1 center">
 <h1>MLOps is…</h1>
 
 <img data-src="https://ljvmiranda921.github.io/assets/png/mlops-shop/mlops-landscape.png" class="r-stretch"><aside class="notes">
-
+<p>this</p>
+<ul>
+<li>new world</li>
+<li>still learning what MLOps is and how to define it</li>
+</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -468,15 +488,53 @@ Isabel Zimmerman, Posit PBC
 <h1>MLOps is…</h1>
 <div class="fragment">
 <p>a set of <u>practices</u> to <em>deploy</em> and <em>maintain</em> machine learning models in production <strong>reliably</strong> and <strong>efficiently</strong></p>
-</div>
-<div class="fragment">
-<p>and these practices can be HARD.</p>
+<aside class="notes">
+<p>these practices can help you create better models, not necessarily in the statistical sense</p>
+<ul>
+<li>model management</li>
+<li>model collaboration</li>
+<li>model relevancy</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
 
-<section>
-<section id="section" class="title-slide slide level1 center">
-<h1></h1>
+<section id="who-needs-mlops" class="title-slide slide level1 center">
+<h1>Who needs MLOps?</h1>
+<aside class="notes">
+<ul>
+<li>Where are our models stored?</li>
+<li>How do I share my model with the rest of my organization?</li>
+<li>How can I use a model without importing it and reproducing its environment?</li>
+<li>What is our process or cadence to retrain deployed models with new data?</li>
+<li>How do I integrate my model into a workflow orchestration system?</li>
+<li>How can I monitor model performance over time?</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="who-needs-mlops-1" class="title-slide slide level1 center">
+<h1>Who needs MLOps?</h1>
 <div class="r-fit-text">
 <p>if you develop models…</p>
 <p>you can operationalize them</p>
@@ -497,15 +555,13 @@ Isabel Zimmerman, Posit PBC
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-1" class="slide level2">
-<h2></h2>
 
-<img data-src="https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/ml_ops_cycle.png?raw=true" class="r-stretch"></section></section>
-<section id="section-2" class="title-slide slide level1 center" data-background-iframe="logo-fall/index.html">
+<section>
+<section id="section" class="title-slide slide level1 center" data-background-iframe="logo-fall/index.html">
 <h1></h1>
 
 <img data-src="https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/vetiverhex.png?raw=true" class="quarto-figure-center r-stretch"><aside class="notes">
-
+<p>the tool the mlops team at posit has created is called vetiver, and it is available as an R and Python package</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -518,12 +574,15 @@ Isabel Zimmerman, Posit PBC
           display:block!important;
       }</style></aside>
 </section>
+<section id="section-1" class="slide level2">
+<h2></h2>
 
+<img data-src="https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/ml_ops_cycle.png?raw=true" class="r-stretch"></section></section>
 <section>
 <section id="version-with-vetiver" class="title-slide slide level1 center">
 <h1>Version with vetiver</h1>
 <aside class="notes">
-<p>people think of versioning, its usually in the context of git! but we version lots of different things, and mostly badly</p>
+<p>we version lots of different things, and mostly badly</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -582,7 +641,8 @@ Isabel Zimmerman, Posit PBC
 <span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> pins</span>
 <span id="cb2-3"><a href="#cb2-3"></a></span>
 <span id="cb2-4"><a href="#cb2-4"></a>model_board <span class="op">=</span> board_temp(</span>
-<span id="cb2-5"><a href="#cb2-5"></a>    allow_pickle_read <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5"></a>    allow_pickle_read <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <aside class="notes">
@@ -628,7 +688,8 @@ Isabel Zimmerman, Posit PBC
 <span id="cb4-10"><a href="#cb4-10"></a>v <span class="op">=</span> VetiverModel(</span>
 <span id="cb4-11"><a href="#cb4-11"></a>    model, </span>
 <span id="cb4-12"><a href="#cb4-12"></a>    <span class="st">"user.name/model_name"</span>, </span>
-<span id="cb4-13"><a href="#cb4-13"></a>    training_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-13"><a href="#cb4-13"></a>    training_data</span>
+<span id="cb4-14"><a href="#cb4-14"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -640,14 +701,15 @@ Isabel Zimmerman, Posit PBC
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(vetiver)</span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(pins)</span>
 <span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a>model_board <span class="ot">&lt;-</span> <span class="fu">board_temp</span>()</span>
+<span id="cb5-4"><a href="#cb5-4"></a>model_board <span class="ot">&lt;-</span> <span class="fu">board_connect</span>()</span>
 <span id="cb5-5"><a href="#cb5-5"></a></span>
 <span id="cb5-6"><a href="#cb5-6"></a>v <span class="ot">&lt;-</span> <span class="fu">vetiver_model</span>(</span>
 <span id="cb5-7"><a href="#cb5-7"></a>    model, </span>
-<span id="cb5-8"><a href="#cb5-8"></a>    <span class="st">"user.name/model_name"</span>)</span>
-<span id="cb5-9"><a href="#cb5-9"></a></span>
-<span id="cb5-10"><a href="#cb5-10"></a>model_board <span class="sc">%&gt;%</span> </span>
-<span id="cb5-11"><a href="#cb5-11"></a>    <span class="fu">vetiver_pin_write</span>(v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-8"><a href="#cb5-8"></a>    <span class="st">"user.name/model_name"</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a>    )</span>
+<span id="cb5-10"><a href="#cb5-10"></a></span>
+<span id="cb5-11"><a href="#cb5-11"></a>model_board <span class="sc">%&gt;%</span> </span>
+<span id="cb5-12"><a href="#cb5-12"></a>    <span class="fu">vetiver_pin_write</span>(v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <p><em>in python</em></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> pins</span>
@@ -657,13 +719,16 @@ Isabel Zimmerman, Posit PBC
 <span id="cb6-5"><a href="#cb6-5"></a>load_dotenv()</span>
 <span id="cb6-6"><a href="#cb6-6"></a></span>
 <span id="cb6-7"><a href="#cb6-7"></a>model_board <span class="op">=</span> pins.board_connect(</span>
-<span id="cb6-8"><a href="#cb6-8"></a>    allow_pickle_read <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb6-9"><a href="#cb6-9"></a></span>
-<span id="cb6-10"><a href="#cb6-10"></a>v <span class="op">=</span> VetiverModel(</span>
-<span id="cb6-11"><a href="#cb6-11"></a>    model, </span>
-<span id="cb6-12"><a href="#cb6-12"></a>    <span class="st">"user.name/model_name"</span>, </span>
-<span id="cb6-13"><a href="#cb6-13"></a>    prototype_data <span class="op">=</span> training_data)</span>
-<span id="cb6-14"><a href="#cb6-14"></a>vetiver_pin_write(model_board, v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-8"><a href="#cb6-8"></a>    allow_pickle_read <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a>    )</span>
+<span id="cb6-10"><a href="#cb6-10"></a></span>
+<span id="cb6-11"><a href="#cb6-11"></a>v <span class="op">=</span> VetiverModel(</span>
+<span id="cb6-12"><a href="#cb6-12"></a>    model, </span>
+<span id="cb6-13"><a href="#cb6-13"></a>    <span class="st">"user.name/model_name"</span>, </span>
+<span id="cb6-14"><a href="#cb6-14"></a>    prototype_data <span class="op">=</span> training_data</span>
+<span id="cb6-15"><a href="#cb6-15"></a>    )</span>
+<span id="cb6-16"><a href="#cb6-16"></a></span>
+<span id="cb6-17"><a href="#cb6-17"></a>vetiver_pin_write(model_board, v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <aside class="notes">
@@ -688,33 +753,13 @@ Isabel Zimmerman, Posit PBC
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>model_board <span class="sc">%&gt;%</span> </span>
 <span id="cb7-2"><a href="#cb7-2"></a>    <span class="fu">pin_meta</span>(<span class="st">"user.name/model_name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>model_board<span class="op">\</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>    .pin_meta(<span class="st">"user.name/model_name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>model_board.pin_meta(</span>
+<span id="cb8-2"><a href="#cb8-2"></a>    <span class="st">"user.name/model_name"</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <aside class="notes">
-<p>with infrastructure to version our model, it is time to</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="make-it-easy-to-do-the-right-thing" class="slide level2">
-<h2>Make it easy to do the right thing</h2>
-<ul>
-<li>robust and human-friendly checking of new data</li>
-<li>track and document software dependencies of models</li>
-<li><a href="https://vetiver.rstudio.com/learn-more/model-card.html">model cards</a> for transparent, responsible reporting</li>
-</ul>
-<aside class="notes">
-<p>Model Cards provide a framework for transparent, responsible reporting. Use the vetiver <code>.qmd</code> Quarto template as a place to start, with vetiver.model_card()</p>
+<p>versioning</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -854,6 +899,27 @@ Isabel Zimmerman, Posit PBC
           display:block!important;
       }</style></aside>
 </section>
+<section id="make-it-easy-to-do-the-right-thing" class="slide level2">
+<h2>Make it easy to do the right thing</h2>
+<ul>
+<li>robust and human-friendly checking of new data</li>
+<li>track and document software dependencies of models</li>
+<li><a href="https://vetiver.rstudio.com/learn-more/model-card.html">model cards</a> for transparent, responsible reporting</li>
+</ul>
+<aside class="notes">
+<p>Model Cards provide a framework for transparent, responsible reporting. Use the vetiver <code>.qmd</code> Quarto template as a place to start, with vetiver.model_card()</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="demo" class="slide level2">
 <h2>Demo</h2>
 </section>
@@ -894,8 +960,15 @@ Isabel Zimmerman, Posit PBC
 </section>
 <section id="resources" class="slide level2">
 <h2>Resources</h2>
+<ul>
+<li><p>Documentation at https://vetiver.rstudio.com/</p></li>
+<li><p>Isabel Zimmerman’s talk from rstudio::conf() 2022 on <a href="https://www.rstudio.com/conference/2022/talks/demystifying-mlops/">Demystifying MLOps</a></p></li>
+<li><p>Webinar by Julia and Isabel for <a href="https://juliasilge.github.io/mlops-rstudio-meetup/">Posit Enterprise Meetup</a></p></li>
+<li><p>Julia’s screencast on <a href="https://www.youtube.com/watch?v=5s7fI4cl2C8">deploying a model with Docker</a></p></li>
+<li><p>End-to-end demos from Posit Solution Engineering in <a href="https://github.com/sol-eng/bike_predict">R</a> and <a href="https://github.com/sol-eng/bike_predict_python">Python</a></p></li>
+</ul>
 <div class="footer footer-default">
-
+<p>http://www.isabelizimm.me/talk-2024-vetiver-pins/</p>
 </div>
 </section></section>
     </div>

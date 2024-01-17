@@ -47,8 +47,16 @@ format:
 
 - Software engineer 🛠️
 
+::: notes
+or other data practitioner
+:::
 
 # MLOps is...
+
+. . . 
+
+_Machine Learning Operations_
+
 
 ::: {.notes}
 the name of this talk is MLOps with vetiver, but you might not know what MLOps is, or you might have heard of MLOps but it came with a chart of the MLOps landscape that looks sort of like...
@@ -59,7 +67,10 @@ the name of this talk is MLOps with vetiver, but you might not know what MLOps i
 ![](https://ljvmiranda921.github.io/assets/png/mlops-shop/mlops-landscape.png)
 
 ::: notes
+this
 
+- new world
+- still learning what MLOps is and how to define it
 
 :::
 
@@ -69,12 +80,28 @@ the name of this talk is MLOps with vetiver, but you might not know what MLOps i
 
 a set of <u>practices</u> to *deploy* and *maintain* machine learning models in production **reliably** and **efficiently**
 
-. . .
+::: notes
+these practices can help you create better models, not necessarily in the statistical sense
 
-and these practices can be HARD.
+- model management
+- model collaboration
+- model relevancy
+
+:::
+
+# Who needs MLOps?
+
+::: notes
+- Where are our models stored?
+- How do I share my model with the rest of my organization?
+- How can I use a model without importing it and reproducing its environment?
+- What is our process or cadence to retrain deployed models with new data?
+- How do I integrate my model into a workflow orchestration system?
+- How can I monitor model performance over time?
+:::
 
 
-# 
+# Who needs MLOps? 
 
 ::: r-fit-text
 if you develop models...
@@ -90,24 +117,24 @@ the "real world" value of models often times comes from integrating
 my advice for you, is to bring your models outside!!
 :::
 
+# {background-iframe="logo-fall/index.html"}
+
+![](https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/vetiverhex.png?raw=true){fig-align="center"}
+
+::: notes
+the tool the mlops team at posit has created is called vetiver, and it is available as an R and Python package
+:::
+
+
 ##
 
 ![](https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/ml_ops_cycle.png?raw=true)
 
 
-
-# {background-iframe="logo-fall/index.html"}
-
-![](https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/vetiverhex.png?raw=true){fig-align="center"}
-
-::: {.notes}
-
-:::
-
 # Version with vetiver
 
 ::: {.notes}
-people think of versioning, its usually in the context of git! but we version lots of different things, and mostly badly
+we version lots of different things, and mostly badly
 :::
 
 ## Version with vetiver
@@ -163,7 +190,8 @@ import vetiver
 import pins
 
 model_board = board_temp(
-    allow_pickle_read = True)
+    allow_pickle_read = True
+    )
 ```
 :::
 
@@ -209,7 +237,8 @@ model_board = pins.board_connect(
 v = VetiverModel(
     model, 
     "user.name/model_name", 
-    training_data)
+    training_data
+    )
 ```
 :::
 
@@ -225,11 +254,12 @@ _in r_
 library(vetiver)
 library(pins)
 
-model_board <- board_temp()
+model_board <- board_connect()
 
 v <- vetiver_model(
     model, 
-    "user.name/model_name")
+    "user.name/model_name"
+    )
 
 model_board %>% 
     vetiver_pin_write(v)
@@ -246,12 +276,15 @@ from vetiver import VetiverModel
 load_dotenv()
 
 model_board = pins.board_connect(
-    allow_pickle_read = True)
+    allow_pickle_read = True
+    )
 
 v = VetiverModel(
     model, 
     "user.name/model_name", 
-    prototype_data = training_data)
+    prototype_data = training_data
+    )
+
 vetiver_pin_write(model_board, v)
 ```
 :::
@@ -278,8 +311,9 @@ model_board %>%
 
 ::: {.column width="50%"}
 ```python
-model_board\
-    .pin_meta("user.name/model_name")
+model_board.pin_meta(
+    "user.name/model_name"
+    )
 ```
 :::
 
@@ -287,20 +321,7 @@ model_board\
 
 
 ::: {.notes}
-with infrastructure to version our model, it is time to
-:::
-
-
-## Make it easy to do the right thing
-
-- robust and human-friendly checking of new data
-- track and document software dependencies of models
-- [model cards](https://vetiver.rstudio.com/learn-more/model-card.html) for transparent, responsible reporting
-
-::: notes
-Model Cards provide a framework for transparent, responsible reporting. 
- Use the vetiver `.qmd` Quarto template as a place to start, 
- with vetiver.model_card()
+versioning 
 :::
 
 # Deploy your model
@@ -429,6 +450,18 @@ if you are not monitoring your model in some way, you are oblivious to decay.
 dashboards in R and Python
 :::
 
+## Make it easy to do the right thing
+
+- robust and human-friendly checking of new data
+- track and document software dependencies of models
+- [model cards](https://vetiver.rstudio.com/learn-more/model-card.html) for transparent, responsible reporting
+
+::: notes
+Model Cards provide a framework for transparent, responsible reporting. 
+ Use the vetiver `.qmd` Quarto template as a place to start, 
+ with vetiver.model_card()
+:::
+
 ## Demo
 
 ## Using vetiver
@@ -461,3 +494,13 @@ also with leveraging pins, it makes it easy to move data between R and Python at
 your R and Python models!
 
 ## Resources
+
+- Documentation at https://vetiver.rstudio.com/
+
+- Isabel Zimmerman’s talk from rstudio::conf() 2022 on [Demystifying MLOps](https://www.rstudio.com/conference/2022/talks/demystifying-mlops/)
+
+- Webinar by Julia and Isabel for [Posit Enterprise Meetup](https://juliasilge.github.io/mlops-rstudio-meetup/)
+
+- Julia’s screencast on [deploying a model with Docker](https://www.youtube.com/watch?v=5s7fI4cl2C8)
+
+- End-to-end demos from Posit Solution Engineering in [R](https://github.com/sol-eng/bike_predict) and [Python](https://github.com/sol-eng/bike_predict_python)
