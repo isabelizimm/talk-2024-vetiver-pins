@@ -1,0 +1,450 @@
+---
+title: "MLOps with vetiver"
+subtitle: "University of Wisconsin-Madison, 2024"
+author: "Isabel Zimmerman, Posit PBC"
+format:
+  revealjs: 
+    slide-number: true
+    preview-links: auto
+    background-image: https://i.pinimg.com/originals/5f/84/f3/5f84f35a4861d27b91ef32837d50bf7f.jpg
+---
+
+## Hello!
+
+. . .
+
+<center>
+
+<img src="https://github.com/isabelizimm.png" style="border-radius: 50%;" width="300px"/>
+
+[{{< fa brands github >}} \@isabelizimm](https://github.com/isabelizimm)
+
+[{{< fa brands mastodon >}} \@isabelizimm@fosstodon.org](https://fosstodon.org/@isabelizimm)
+
+[{{< fa brands linkedin >}} \isabel-zimmerman](https://www.linkedin.com/in/isabel-zimmerman/)
+
+[{{< fa link >}} isabelizimm.github.io](https://isabelizimm.github.io/)
+
+</center>
+
+
+## Who are you?
+
+- Data scientist 👩‍💻
+
+- Statistician 🌟
+
+- Data analyst 📈
+
+- Software engineer 🛠️
+
+
+# MLOps is...
+
+::: {.notes}
+the name of this talk is MLOps with vetiver, but you might not know what MLOps is, or you might have heard of MLOps but it came with a chart of the MLOps landscape that looks sort of like...
+:::
+
+# MLOps is...
+
+![](https://ljvmiranda921.github.io/assets/png/mlops-shop/mlops-landscape.png)
+
+::: notes
+
+
+:::
+
+# MLOps is...
+
+. . .
+
+a set of <u>practices</u> to *deploy* and *maintain* machine learning models in production **reliably** and **efficiently**
+
+. . .
+
+and these practices can be HARD.
+
+
+# 
+
+::: r-fit-text
+if you develop models...
+
+you can operationalize them
+:::
+
+::: notes
+but Posit believes if you are someone who develops models, you can and often should be the one to operationalize it, and you already have the a lot of the skills you need to do this effectively
+
+the "real world" value of models often times comes from integrating
+
+my advice for you, is to bring your models outside!!
+:::
+
+##
+
+![](https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/ml_ops_cycle.png?raw=true)
+
+
+
+# {background-iframe="logo-fall/index.html"}
+
+![](https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/vetiverhex.png?raw=true){fig-align="center"}
+
+::: {.notes}
+
+:::
+
+# Version with vetiver
+
+::: {.notes}
+people think of versioning, its usually in the context of git! but we version lots of different things, and mostly badly
+:::
+
+## Version with vetiver
+
+`model`
+
+. . .
+
+`model_final`
+
+. . .
+
+`model_final_final`
+
+. . . 
+
+`model_final_final_actually`
+
+. . . 
+
+`model_final_final_actually (1)`
+
+::: {.notes}
+versioning your model is the foundation for success in machine learning deployments...
+
+we can already see here this is not going to scale for ONE MODEL
+lacks context
+
+it would be nice if my models:
+- lived in a central location
+- were discoverable by my team
+- loaded right into memory
+:::
+
+## Version with vetiver
+
+:::: {.columns}
+
+::: {.column width="50%"}
+_in r_
+```r
+library(vetiver)
+library(pins)
+
+model_board <- board_temp()
+```
+:::
+
+::: {.column width="50%"}
+_in python_
+```python
+import vetiver
+import pins
+
+model_board = board_temp(
+    allow_pickle_read = True)
+```
+:::
+
+::::
+
+::: {.notes}
+vetiver has a secret best friend pins, which is also available as a package in r and python.
+
+board holds, organizes, and created metadata for almost any objects, but it has some special features when you use a vetiver model
+:::
+
+## Version with vetiver
+
+:::: {.columns}
+
+::: {.column width="50%"}
+_in r_
+```r
+library(vetiver)
+library(pins)
+
+model_board <- board_connect()
+
+v <- vetiver_model(
+    model, 
+    "user.name/model_name"
+    )
+```
+:::
+
+::: {.column width="50%"}
+_in python_
+```python
+import pins
+from dotenv import load_dotenv
+from vetiver import VetiverModel
+
+load_dotenv()
+
+model_board = pins.board_connect(
+    allow_pickle_read = True)
+
+v = VetiverModel(
+    model, 
+    "user.name/model_name", 
+    training_data)
+```
+:::
+
+::::
+
+## Version with vetiver
+
+:::: {.columns}
+
+::: {.column width="50%"}
+_in r_
+```r
+library(vetiver)
+library(pins)
+
+model_board <- board_temp()
+
+v <- vetiver_model(
+    model, 
+    "user.name/model_name")
+
+model_board %>% 
+    vetiver_pin_write(v)
+```
+:::
+
+::: {.column width="50%"}
+_in python_
+```python
+import pins
+from dotenv import load_dotenv
+from vetiver import VetiverModel
+
+load_dotenv()
+
+model_board = pins.board_connect(
+    allow_pickle_read = True)
+
+v = VetiverModel(
+    model, 
+    "user.name/model_name", 
+    prototype_data = training_data)
+vetiver_pin_write(model_board, v)
+```
+:::
+
+::::
+
+::: {.notes}
+then, you write your pin to your board and pins will automatically version it for you. you can also read a specific version of the pin at a later date, and your model will be loaded right into memory!
+
+we can see that pins helps with scale, but what about context?
+:::
+
+## Version with vetiver
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```r
+model_board %>% 
+    pin_meta("user.name/model_name")
+```
+:::
+
+::: {.column width="50%"}
+```python
+model_board\
+    .pin_meta("user.name/model_name")
+```
+:::
+
+::::
+
+
+::: {.notes}
+with infrastructure to version our model, it is time to
+:::
+
+
+## Make it easy to do the right thing
+
+- robust and human-friendly checking of new data
+- track and document software dependencies of models
+- [model cards](https://vetiver.rstudio.com/learn-more/model-card.html) for transparent, responsible reporting
+
+::: notes
+Model Cards provide a framework for transparent, responsible reporting. 
+ Use the vetiver `.qmd` Quarto template as a place to start, 
+ with vetiver.model_card()
+:::
+
+# Deploy your model
+
+![](https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/ml_ops_cycle.png?raw=true)
+
+## Deploy your model
+
+![](https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/deploy-cloud.jpg?raw=true)
+
+::: {.notes}
+creating model as a REST API endpoint
+
+useful bc model can be used in memory just like you loaded it! without having to load it
+
+also useful since API endpoints are testable, 
+:::
+
+## Deploy your model
+
+![](https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/deploy-not-here.jpg?raw=true)
+
+## Deploy your model
+
+:::: {.columns}
+
+::: {.column width="50%"}
+_in r_
+```r
+library(plumber)
+
+pr() %>%
+  vetiver_api(v)
+```
+:::
+
+::: {.column width="50%"}
+_in python_
+```python
+api = VetiverAPI(v)
+api.run()
+```
+:::
+
+::::
+
+
+## Deploy your model
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+_in r_
+```r
+vetiver_deploy_rsconnect(
+    model_board, 
+    "user.name/model_name"
+    )
+```
+:::
+
+::: {.column width="50%"}
+_in python_
+```python
+vetiver.deploy_rsconnect(
+    connect_server = connect_server, 
+    board = model_board, 
+    pin_name = "user.name/model_name"
+    )
+```
+:::
+
+::::
+
+# Monitor your model
+
+![](https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/ml_ops_cycle.png?raw=true)
+
+## Monitor your model
+
+![](https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/decay.jpeg?raw=true)
+
+::: {.notes}
+model is deployed a data scientist's work is not done!
+
+now, monitoring means somthing unique in MLOps-- not necessarily looking at CPU usage, runtime, etc, 
+
+looking at statistical properties of input data or predictions
+:::
+
+## Monitor your model
+
+```{.python code-line-numbers="1,10,17"}
+metrics = vetiver.compute_metrics(
+    new_data, 
+    "date", 
+    timedelta(weeks = 1), 
+    [mean_absolute_error, r2_score], 
+    "like_count", 
+    "y_pred"
+    )
+
+vetiver.pin_metrics(
+    model_board, 
+    metrics, 
+    "metrics_pin_name"
+    )
+    
+vetiver.plot_metrics(metrics)
+```
+
+## Monitor your model
+
+![](https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/silent_error.jpeg?raw=true)
+
+::: {.notes}
+it is SO IMPORTANT TO TRACK your model's performance metrics start decaying.
+
+software engineering--when things went wrong, ERROR
+
+models fail silently! and they can still run with no error, even if your accuracy is zero percent--
+
+if you are not monitoring your model in some way, you are oblivious to decay.
+:::
+
+## Demo
+
+## Using vetiver
+
+- Allows those new to MLOps to get started quickly
+- Supports scaling safely as an org matures
+
+
+::: {.notes}
+few simple tools that you are able to compose together to make complex objects
+
+since vetiverapi is built on fastapi, can build out to be quite complex
+also has methods to add other POST endpoints
+
+also is composable with other tools to build out a custom framework that works well for your team
+---
+one thing vetiver has worked really hard on is to lower the barrier to entry on deploying models, making this feel like a natural extension of your current data science workflow
+
+you are still able to use the tools you want
+
+also with leveraging pins, it makes it easy to move data between R and Python at places where this is possible
+:::
+
+## Using vetiver
+
+- Version
+- Deploy
+- Monitor
+
+your R and Python models!
