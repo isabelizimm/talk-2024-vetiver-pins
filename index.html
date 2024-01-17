@@ -7,7 +7,9 @@
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.449">
 
   <meta name="author" content="Isabel Zimmerman, Posit PBC">
@@ -406,13 +408,16 @@ Isabel Zimmerman, Posit PBC
 <section id="hello" class="slide level2">
 <h2>Hello!</h2>
 <div class="fragment">
-<center>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p><img src="https://github.com/isabelizimm.png" style="border-radius: 50%;" width="300px"></p>
-<p><a href="https://github.com/isabelizimm"> @isabelizimm</a></p>
-<p><a href="https://fosstodon.org/@isabelizimm"> @isabelizimm@fosstodon.org</a></p>
-<p><a href="https://www.linkedin.com/in/isabel-zimmerman/"> -zimmerman</a></p>
-<p><a href="https://isabelizimm.github.io/"> isabelizimm.github.io</a></p>
-</center>
+</div><div class="column" style="width:50%;">
+<p><a href="https://github.com/isabelizimm"><i class="fa-brands fa-github" aria-label="github"></i> @isabelizimm</a></p>
+<p><a href="https://fosstodon.org/@isabelizimm"><i class="fa-brands fa-mastodon" aria-label="mastodon"></i> @isabelizimm@fosstodon.org</a></p>
+<p><a href="https://www.linkedin.com/in/isabel-zimmerman/"><i class="fa-brands fa-linkedin" aria-label="linkedin"></i> isabel-zimmerman</a></p>
+<p><a href="https://www.isabelizimm.me"><i class="fa-solid fa-link" aria-label="link"></i> isabelizimm.github.io</a></p>
+</div>
+</div>
 </div>
 </section>
 <section id="who-are-you" class="slide level2">
@@ -778,9 +783,9 @@ Isabel Zimmerman, Posit PBC
 </div><div class="column" style="width:50%;">
 <p><em>in python</em></p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>vetiver.deploy_rsconnect(</span>
-<span id="cb12-2"><a href="#cb12-2"></a>    connect_server <span class="op">=</span> connect_server, </span>
-<span id="cb12-3"><a href="#cb12-3"></a>    board <span class="op">=</span> model_board, </span>
-<span id="cb12-4"><a href="#cb12-4"></a>    pin_name <span class="op">=</span> <span class="st">"user.name/model_name"</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>    connect_server, </span>
+<span id="cb12-3"><a href="#cb12-3"></a>    model_board, </span>
+<span id="cb12-4"><a href="#cb12-4"></a>    <span class="st">"user.name/model_name"</span></span>
 <span id="cb12-5"><a href="#cb12-5"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -811,7 +816,7 @@ Isabel Zimmerman, Posit PBC
 </section>
 <section id="monitor-your-model-2" class="slide level2">
 <h2>Monitor your model</h2>
-<div class="sourceCode" id="cb13" data-code-line-numbers="1,10,17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>metrics <span class="op">=</span> vetiver.compute_metrics(</span>
+<div class="sourceCode" id="cb13" data-code-line-numbers="1,10,16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>metrics <span class="op">=</span> vetiver.compute_metrics(</span>
 <span id="cb13-2"><a href="#cb13-2"></a>    new_data, </span>
 <span id="cb13-3"><a href="#cb13-3"></a>    <span class="st">"date"</span>, </span>
 <span id="cb13-4"><a href="#cb13-4"></a>    timedelta(weeks <span class="op">=</span> <span class="dv">1</span>), </span>
@@ -836,6 +841,7 @@ Isabel Zimmerman, Posit PBC
 <p>software engineering–when things went wrong, ERROR</p>
 <p>models fail silently! and they can still run with no error, even if your accuracy is zero percent–</p>
 <p>if you are not monitoring your model in some way, you are oblivious to decay.</p>
+<p>dashboards in R and Python</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -884,7 +890,10 @@ Isabel Zimmerman, Posit PBC
 <li>Deploy</li>
 <li>Monitor</li>
 </ul>
-<p>your R and Python models</p>
+<p>your R and Python models!</p>
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
 <div class="footer footer-default">
 
 </div>

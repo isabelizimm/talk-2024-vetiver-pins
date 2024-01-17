@@ -1,31 +1,40 @@
 ---
 title: "MLOps with vetiver"
-subtitle: "University of Wisconsin-Madison, 2024"
+subtitle: "January 2024"
 author: "Isabel Zimmerman, Posit PBC"
 format:
   revealjs: 
     slide-number: true
     preview-links: auto
     background-image: https://i.pinimg.com/originals/5f/84/f3/5f84f35a4861d27b91ef32837d50bf7f.jpg
+    footer: http://www.isabelizimm.me/talk-2024-vetiver-pins/
 ---
 
 ## Hello!
 
 . . .
 
-<center>
+:::: {.columns}
+
+::: {.column width="50%"}
 
 <img src="https://github.com/isabelizimm.png" style="border-radius: 50%;" width="300px"/>
+
+:::
+
+::: {.column width="50%"}
 
 [{{< fa brands github >}} \@isabelizimm](https://github.com/isabelizimm)
 
 [{{< fa brands mastodon >}} \@isabelizimm@fosstodon.org](https://fosstodon.org/@isabelizimm)
 
-[{{< fa brands linkedin >}} \isabel-zimmerman](https://www.linkedin.com/in/isabel-zimmerman/)
+[{{< fa brands linkedin >}} isabel-zimmerman](https://www.linkedin.com/in/isabel-zimmerman/)
 
-[{{< fa link >}} isabelizimm.github.io](https://isabelizimm.github.io/)
+[{{< fa link >}} isabelizimm.github.io](https://www.isabelizimm.me)
 
-</center>
+:::
+
+::::
 
 
 ## Who are you?
@@ -358,9 +367,9 @@ vetiver_deploy_rsconnect(
 _in python_
 ```python
 vetiver.deploy_rsconnect(
-    connect_server = connect_server, 
-    board = model_board, 
-    pin_name = "user.name/model_name"
+    connect_server, 
+    model_board, 
+    "user.name/model_name"
     )
 ```
 :::
@@ -385,7 +394,7 @@ looking at statistical properties of input data or predictions
 
 ## Monitor your model
 
-```{.python code-line-numbers="1,10,17"}
+```{.python code-line-numbers="1,10,16"}
 metrics = vetiver.compute_metrics(
     new_data, 
     "date", 
@@ -416,6 +425,8 @@ software engineering--when things went wrong, ERROR
 models fail silently! and they can still run with no error, even if your accuracy is zero percent--
 
 if you are not monitoring your model in some way, you are oblivious to decay.
+
+dashboards in R and Python
 :::
 
 ## Demo
@@ -448,3 +459,5 @@ also with leveraging pins, it makes it easy to move data between R and Python at
 - Monitor
 
 your R and Python models!
+
+## Resources
