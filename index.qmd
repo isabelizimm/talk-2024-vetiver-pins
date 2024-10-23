@@ -1,12 +1,13 @@
 ---
 title: "MLOps with vetiver"
-subtitle: "January 2024"
+subtitle: "October 2024"
 author: "Isabel Zimmerman, Posit PBC"
 format:
   revealjs: 
     slide-number: true
     preview-links: auto
-    background-image: https://i.pinimg.com/originals/5f/84/f3/5f84f35a4861d27b91ef32837d50bf7f.jpg
+    theme: dark
+    background-image: trees.jpg
     footer: http://www.isabelizimm.me/talk-2024-vetiver-pins/
 ---
 

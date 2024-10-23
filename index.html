@@ -7,10 +7,10 @@
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.449">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Isabel Zimmerman, Posit PBC">
   <title>MLOps with vetiver</title>
@@ -44,7 +44,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -58,44 +58,44 @@
         -khtml-user-select: none; -moz-user-select: none;
         -ms-user-select: none; user-select: none;
         padding: 0 4px; width: 4em;
-        color: #aaaaaa;
       }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
     div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
+      { color: #f8f8f2;  }
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -388,13 +388,13 @@
     }
   </style>
 </head>
-<body class="quarto-light">
+<body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">MLOps with vetiver</h1>
-  <p class="subtitle">January 2024</p>
+  <p class="subtitle">October 2024</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -416,8 +416,7 @@ Isabel Zimmerman, Posit PBC
 <p><a href="https://fosstodon.org/@isabelizimm"><i class="fa-brands fa-mastodon" aria-label="mastodon"></i> @isabelizimm@fosstodon.org</a></p>
 <p><a href="https://www.linkedin.com/in/isabel-zimmerman/"><i class="fa-brands fa-linkedin" aria-label="linkedin"></i> isabel-zimmerman</a></p>
 <p><a href="https://www.isabelizimm.me"><i class="fa-solid fa-link" aria-label="link"></i> isabelizimm.github.io</a></p>
-</div>
-</div>
+</div></div>
 </div>
 </section>
 <section id="who-are-you" class="slide level2">
@@ -560,7 +559,7 @@ Isabel Zimmerman, Posit PBC
 <section id="section" class="title-slide slide level1 center" data-background-iframe="logo-fall/index.html">
 <h1></h1>
 
-<img data-src="https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/vetiverhex.png?raw=true" class="quarto-figure-center r-stretch"><aside class="notes">
+<img data-src="https://github.com/isabelizimm/pydata-nyc2022/blob/main/images/vetiverhex.png?raw=true" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
 <p>the tool the mlops team at posit has created is called vetiver, and it is available as an R and Python package</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -631,20 +630,19 @@ Isabel Zimmerman, Posit PBC
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><em>in r</em></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(vetiver)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(pins)</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a>model_board <span class="ot">&lt;-</span> <span class="fu">board_temp</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(vetiver)</span>
+<span id="cb1-2"><a href=""></a><span class="fu">library</span>(pins)</span>
+<span id="cb1-3"><a href=""></a></span>
+<span id="cb1-4"><a href=""></a>model_board <span class="ot">&lt;-</span> <span class="fu">board_temp</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <p><em>in python</em></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> vetiver</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> pins</span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a>model_board <span class="op">=</span> board_temp(</span>
-<span id="cb2-5"><a href="#cb2-5"></a>    allow_pickle_read <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> vetiver</span>
+<span id="cb2-2"><a href=""></a><span class="im">import</span> pins</span>
+<span id="cb2-3"><a href=""></a></span>
+<span id="cb2-4"><a href=""></a>model_board <span class="op">=</span> board_temp(</span>
+<span id="cb2-5"><a href=""></a>    allow_pickle_read <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb2-6"><a href=""></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
 <aside class="notes">
 <p>vetiver has a secret best friend pins, which is also available as a package in r and python.</p>
 <p>board holds, organizes, and created metadata for almost any objects, but it has some special features when you use a vetiver model</p>
@@ -665,72 +663,70 @@ Isabel Zimmerman, Posit PBC
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><em>in r</em></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(vetiver)</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(pins)</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a>model_board <span class="ot">&lt;-</span> <span class="fu">board_connect</span>()</span>
-<span id="cb3-5"><a href="#cb3-5"></a></span>
-<span id="cb3-6"><a href="#cb3-6"></a>v <span class="ot">&lt;-</span> <span class="fu">vetiver_model</span>(</span>
-<span id="cb3-7"><a href="#cb3-7"></a>    model, </span>
-<span id="cb3-8"><a href="#cb3-8"></a>    <span class="st">"user.name/model_name"</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">library</span>(vetiver)</span>
+<span id="cb3-2"><a href=""></a><span class="fu">library</span>(pins)</span>
+<span id="cb3-3"><a href=""></a></span>
+<span id="cb3-4"><a href=""></a>model_board <span class="ot">&lt;-</span> <span class="fu">board_connect</span>()</span>
+<span id="cb3-5"><a href=""></a></span>
+<span id="cb3-6"><a href=""></a>v <span class="ot">&lt;-</span> <span class="fu">vetiver_model</span>(</span>
+<span id="cb3-7"><a href=""></a>    model, </span>
+<span id="cb3-8"><a href=""></a>    <span class="st">"user.name/model_name"</span></span>
+<span id="cb3-9"><a href=""></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <p><em>in python</em></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> pins</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="im">from</span> vetiver <span class="im">import</span> VetiverModel</span>
-<span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a>load_dotenv()</span>
-<span id="cb4-6"><a href="#cb4-6"></a></span>
-<span id="cb4-7"><a href="#cb4-7"></a>model_board <span class="op">=</span> pins.board_connect(</span>
-<span id="cb4-8"><a href="#cb4-8"></a>    allow_pickle_read <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb4-9"><a href="#cb4-9"></a></span>
-<span id="cb4-10"><a href="#cb4-10"></a>v <span class="op">=</span> VetiverModel(</span>
-<span id="cb4-11"><a href="#cb4-11"></a>    model, </span>
-<span id="cb4-12"><a href="#cb4-12"></a>    <span class="st">"user.name/model_name"</span>, </span>
-<span id="cb4-13"><a href="#cb4-13"></a>    training_data</span>
-<span id="cb4-14"><a href="#cb4-14"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> pins</span>
+<span id="cb4-2"><a href=""></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="cb4-3"><a href=""></a><span class="im">from</span> vetiver <span class="im">import</span> VetiverModel</span>
+<span id="cb4-4"><a href=""></a></span>
+<span id="cb4-5"><a href=""></a>load_dotenv()</span>
+<span id="cb4-6"><a href=""></a></span>
+<span id="cb4-7"><a href=""></a>model_board <span class="op">=</span> pins.board_connect(</span>
+<span id="cb4-8"><a href=""></a>    allow_pickle_read <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb4-9"><a href=""></a></span>
+<span id="cb4-10"><a href=""></a>v <span class="op">=</span> VetiverModel(</span>
+<span id="cb4-11"><a href=""></a>    model, </span>
+<span id="cb4-12"><a href=""></a>    <span class="st">"user.name/model_name"</span>, </span>
+<span id="cb4-13"><a href=""></a>    training_data</span>
+<span id="cb4-14"><a href=""></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
 </section>
 <section id="version-with-vetiver-4" class="slide level2">
 <h2>Version with vetiver</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><em>in r</em></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(vetiver)</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(pins)</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a>model_board <span class="ot">&lt;-</span> <span class="fu">board_connect</span>()</span>
-<span id="cb5-5"><a href="#cb5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6"></a>v <span class="ot">&lt;-</span> <span class="fu">vetiver_model</span>(</span>
-<span id="cb5-7"><a href="#cb5-7"></a>    model, </span>
-<span id="cb5-8"><a href="#cb5-8"></a>    <span class="st">"user.name/model_name"</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a>    )</span>
-<span id="cb5-10"><a href="#cb5-10"></a></span>
-<span id="cb5-11"><a href="#cb5-11"></a>model_board <span class="sc">%&gt;%</span> </span>
-<span id="cb5-12"><a href="#cb5-12"></a>    <span class="fu">vetiver_pin_write</span>(v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">library</span>(vetiver)</span>
+<span id="cb5-2"><a href=""></a><span class="fu">library</span>(pins)</span>
+<span id="cb5-3"><a href=""></a></span>
+<span id="cb5-4"><a href=""></a>model_board <span class="ot">&lt;-</span> <span class="fu">board_connect</span>()</span>
+<span id="cb5-5"><a href=""></a></span>
+<span id="cb5-6"><a href=""></a>v <span class="ot">&lt;-</span> <span class="fu">vetiver_model</span>(</span>
+<span id="cb5-7"><a href=""></a>    model, </span>
+<span id="cb5-8"><a href=""></a>    <span class="st">"user.name/model_name"</span></span>
+<span id="cb5-9"><a href=""></a>    )</span>
+<span id="cb5-10"><a href=""></a></span>
+<span id="cb5-11"><a href=""></a>model_board <span class="sc">%&gt;%</span> </span>
+<span id="cb5-12"><a href=""></a>    <span class="fu">vetiver_pin_write</span>(v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <p><em>in python</em></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> pins</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="im">from</span> vetiver <span class="im">import</span> VetiverModel</span>
-<span id="cb6-4"><a href="#cb6-4"></a></span>
-<span id="cb6-5"><a href="#cb6-5"></a>load_dotenv()</span>
-<span id="cb6-6"><a href="#cb6-6"></a></span>
-<span id="cb6-7"><a href="#cb6-7"></a>model_board <span class="op">=</span> pins.board_connect(</span>
-<span id="cb6-8"><a href="#cb6-8"></a>    allow_pickle_read <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a>    )</span>
-<span id="cb6-10"><a href="#cb6-10"></a></span>
-<span id="cb6-11"><a href="#cb6-11"></a>v <span class="op">=</span> VetiverModel(</span>
-<span id="cb6-12"><a href="#cb6-12"></a>    model, </span>
-<span id="cb6-13"><a href="#cb6-13"></a>    <span class="st">"user.name/model_name"</span>, </span>
-<span id="cb6-14"><a href="#cb6-14"></a>    prototype_data <span class="op">=</span> training_data</span>
-<span id="cb6-15"><a href="#cb6-15"></a>    )</span>
-<span id="cb6-16"><a href="#cb6-16"></a></span>
-<span id="cb6-17"><a href="#cb6-17"></a>vetiver_pin_write(model_board, v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="im">import</span> pins</span>
+<span id="cb6-2"><a href=""></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="cb6-3"><a href=""></a><span class="im">from</span> vetiver <span class="im">import</span> VetiverModel</span>
+<span id="cb6-4"><a href=""></a></span>
+<span id="cb6-5"><a href=""></a>load_dotenv()</span>
+<span id="cb6-6"><a href=""></a></span>
+<span id="cb6-7"><a href=""></a>model_board <span class="op">=</span> pins.board_connect(</span>
+<span id="cb6-8"><a href=""></a>    allow_pickle_read <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb6-9"><a href=""></a>    )</span>
+<span id="cb6-10"><a href=""></a></span>
+<span id="cb6-11"><a href=""></a>v <span class="op">=</span> VetiverModel(</span>
+<span id="cb6-12"><a href=""></a>    model, </span>
+<span id="cb6-13"><a href=""></a>    <span class="st">"user.name/model_name"</span>, </span>
+<span id="cb6-14"><a href=""></a>    prototype_data <span class="op">=</span> training_data</span>
+<span id="cb6-15"><a href=""></a>    )</span>
+<span id="cb6-16"><a href=""></a></span>
+<span id="cb6-17"><a href=""></a>vetiver_pin_write(model_board, v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
 <aside class="notes">
 <p>then, you write your pin to your board and pins will automatically version it for you. you can also read a specific version of the pin at a later date, and your model will be loaded right into memory!</p>
 <p>we can see that pins helps with scale, but what about context?</p>
@@ -750,14 +746,13 @@ Isabel Zimmerman, Posit PBC
 <h2>Version with vetiver</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>model_board <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2"></a>    <span class="fu">pin_meta</span>(<span class="st">"user.name/model_name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>model_board <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href=""></a>    <span class="fu">pin_meta</span>(<span class="st">"user.name/model_name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>model_board.pin_meta(</span>
-<span id="cb8-2"><a href="#cb8-2"></a>    <span class="st">"user.name/model_name"</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>model_board.pin_meta(</span>
+<span id="cb8-2"><a href=""></a>    <span class="st">"user.name/model_name"</span></span>
+<span id="cb8-3"><a href=""></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
 <aside class="notes">
 <p>versioning</p>
 <style type="text/css">
@@ -805,35 +800,33 @@ Isabel Zimmerman, Posit PBC
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><em>in r</em></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(plumber)</span>
-<span id="cb9-2"><a href="#cb9-2"></a></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="fu">pr</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">vetiver_api</span>(v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">library</span>(plumber)</span>
+<span id="cb9-2"><a href=""></a></span>
+<span id="cb9-3"><a href=""></a><span class="fu">pr</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href=""></a>  <span class="fu">vetiver_api</span>(v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <p><em>in python</em></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>api <span class="op">=</span> VetiverAPI(v)</span>
-<span id="cb10-2"><a href="#cb10-2"></a>api.run()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>api <span class="op">=</span> VetiverAPI(v)</span>
+<span id="cb10-2"><a href=""></a>api.run()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
 </section>
 <section id="deploy-your-model-4" class="slide level2">
 <h2>Deploy your model</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><em>in r</em></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">vetiver_deploy_rsconnect</span>(</span>
-<span id="cb11-2"><a href="#cb11-2"></a>    model_board, </span>
-<span id="cb11-3"><a href="#cb11-3"></a>    <span class="st">"user.name/model_name"</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">vetiver_deploy_rsconnect</span>(</span>
+<span id="cb11-2"><a href=""></a>    model_board, </span>
+<span id="cb11-3"><a href=""></a>    <span class="st">"user.name/model_name"</span></span>
+<span id="cb11-4"><a href=""></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <p><em>in python</em></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>vetiver.deploy_rsconnect(</span>
-<span id="cb12-2"><a href="#cb12-2"></a>    connect_server, </span>
-<span id="cb12-3"><a href="#cb12-3"></a>    model_board, </span>
-<span id="cb12-4"><a href="#cb12-4"></a>    <span class="st">"user.name/model_name"</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>vetiver.deploy_rsconnect(</span>
+<span id="cb12-2"><a href=""></a>    connect_server, </span>
+<span id="cb12-3"><a href=""></a>    model_board, </span>
+<span id="cb12-4"><a href=""></a>    <span class="st">"user.name/model_name"</span></span>
+<span id="cb12-5"><a href=""></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
 </section></section>
 <section>
 <section id="monitor-your-model" class="title-slide slide level1 center">
@@ -861,22 +854,22 @@ Isabel Zimmerman, Posit PBC
 </section>
 <section id="monitor-your-model-2" class="slide level2">
 <h2>Monitor your model</h2>
-<div class="sourceCode" id="cb13" data-code-line-numbers="1,10,16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>metrics <span class="op">=</span> vetiver.compute_metrics(</span>
-<span id="cb13-2"><a href="#cb13-2"></a>    new_data, </span>
-<span id="cb13-3"><a href="#cb13-3"></a>    <span class="st">"date"</span>, </span>
-<span id="cb13-4"><a href="#cb13-4"></a>    timedelta(weeks <span class="op">=</span> <span class="dv">1</span>), </span>
-<span id="cb13-5"><a href="#cb13-5"></a>    [mean_absolute_error, r2_score], </span>
-<span id="cb13-6"><a href="#cb13-6"></a>    <span class="st">"like_count"</span>, </span>
-<span id="cb13-7"><a href="#cb13-7"></a>    <span class="st">"y_pred"</span></span>
-<span id="cb13-8"><a href="#cb13-8"></a>    )</span>
-<span id="cb13-9"><a href="#cb13-9"></a></span>
-<span id="cb13-10"><a href="#cb13-10"></a>vetiver.pin_metrics(</span>
-<span id="cb13-11"><a href="#cb13-11"></a>    model_board, </span>
-<span id="cb13-12"><a href="#cb13-12"></a>    metrics, </span>
-<span id="cb13-13"><a href="#cb13-13"></a>    <span class="st">"metrics_pin_name"</span></span>
-<span id="cb13-14"><a href="#cb13-14"></a>    )</span>
-<span id="cb13-15"><a href="#cb13-15"></a>    </span>
-<span id="cb13-16"><a href="#cb13-16"></a>vetiver.plot_metrics(metrics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13" data-code-line-numbers="1,10,16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>metrics <span class="op">=</span> vetiver.compute_metrics(</span>
+<span id="cb13-2"><a href=""></a>    new_data, </span>
+<span id="cb13-3"><a href=""></a>    <span class="st">"date"</span>, </span>
+<span id="cb13-4"><a href=""></a>    timedelta(weeks <span class="op">=</span> <span class="dv">1</span>), </span>
+<span id="cb13-5"><a href=""></a>    [mean_absolute_error, r2_score], </span>
+<span id="cb13-6"><a href=""></a>    <span class="st">"like_count"</span>, </span>
+<span id="cb13-7"><a href=""></a>    <span class="st">"y_pred"</span></span>
+<span id="cb13-8"><a href=""></a>    )</span>
+<span id="cb13-9"><a href=""></a></span>
+<span id="cb13-10"><a href=""></a>vetiver.pin_metrics(</span>
+<span id="cb13-11"><a href=""></a>    model_board, </span>
+<span id="cb13-12"><a href=""></a>    metrics, </span>
+<span id="cb13-13"><a href=""></a>    <span class="st">"metrics_pin_name"</span></span>
+<span id="cb13-14"><a href=""></a>    )</span>
+<span id="cb13-15"><a href=""></a>    </span>
+<span id="cb13-16"><a href=""></a>vetiver.plot_metrics(metrics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="monitor-your-model-3" class="slide level2">
 <h2>Monitor your model</h2>
@@ -967,8 +960,10 @@ Isabel Zimmerman, Posit PBC
 <li><p>Julia’s screencast on <a href="https://www.youtube.com/watch?v=5s7fI4cl2C8">deploying a model with Docker</a></p></li>
 <li><p>End-to-end demos from Posit Solution Engineering in <a href="https://github.com/sol-eng/bike_predict">R</a> and <a href="https://github.com/sol-eng/bike_predict_python">Python</a></p></li>
 </ul>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>http://www.isabelizimm.me/talk-2024-vetiver-pins/</p>
+</div>
 </div>
 </section></section>
     </div>
@@ -1145,7 +1140,7 @@ Isabel Zimmerman, Posit PBC
         mobileViewDistance: 2,
 
        // Parallax background image
-       parallaxBackgroundImage: 'https://i.pinimg.com/originals/5f/84/f3/5f84f35a4861d27b91ef32837d50bf7f.jpg', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+       parallaxBackgroundImage: 'trees.jpg', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
@@ -1216,18 +1211,7 @@ Isabel Zimmerman, Posit PBC
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1259,7 +1243,47 @@ Isabel Zimmerman, Posit PBC
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -1296,7 +1320,11 @@ Isabel Zimmerman, Posit PBC
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

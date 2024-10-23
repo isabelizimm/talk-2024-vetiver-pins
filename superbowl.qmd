@@ -1,0 +1,125 @@
+---
+title: MLOps with `vetiver`
+jupyter: python3
+---
+
+
+## Build a model
+Data scientists can still use the tools they are most comfortable with for the bulk of their workflow.
+
+
+```{python}
+import pandas as pd
+import numpy as np
+from sklearn import model_selection, preprocessing, pipeline
+from sklearn.ensemble import RandomForestRegressor
+import rsconnect
+import vetiver
+from vetiver import vetiver_pin_write, vetiver_endpoint
+
+import os
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
+
+api_key = os.getenv("CONNECT_API_KEY")
+rsc_url = os.getenv("CONNECT_SERVER")
+np.random.seed(500)
+```
+
+We can read in our data, and fit a pipeline that has both the preprocessing steps and the model.
+
+```{python}
+raw = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-02/youtube.csv')
+df = pd.DataFrame(raw)
+```
+
+```{python}
+df = df[["like_count", "funny", "show_product_quickly", "patriotic", \
+    "celebrity", "danger", "animals"]].dropna()
+X, y = df.iloc[:,1:],df['like_count']
+X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y,test_size=0.2)
+
+le = preprocessing.OrdinalEncoder().fit(X)
+rf = RandomForestRegressor().fit(le.transform(X_train), y_train)
+```
+
+```{python}
+rf_pipe = pipeline.Pipeline([('label_encoder',le), ('random_forest', rf)])
+```
+
+## Version a model
+
+Users first create a deployable model object, `VetiverModel()`. This holds all the pieces necessary to deploy the model later.
+
+*In R, you saw the equivalent, `vetiver_model()`.*
+
+```{python}
+v = vetiver.VetiverModel(
+    rf_pipe, 
+    prototype_data=X_train, 
+    model_name = "isabel.zimmerman/superbowl_rf"
+)
+```
+
+```{python}
+import pins 
+board = pins.board_connect(allow_pickle_read=True)
+
+vetiver_pin_write(board, v)
+```
+
+```{python}
+board.pin_meta("isabel.zimmerman/superbowl_rf")
+```
+
+```{python}
+vetiver.model_card()
+```
+
+## Deploy a model
+Next, intialize the API endpoint with `VetiverAPI()`. To run the API locally, use `.run()`
+
+*In R, the equivalent is `vetiver_api()` and `pr_run()`.*
+
+```{python}
+app = vetiver.VetiverAPI(v)
+app.run()
+```
+
+This is a great start to debug my API, but my end goal is to *NOT* run my model on my personal machine. We can instead deploy to a remote server, such as RStudio Connect. This will involve setting up a connection with the server and deploying our pinned model to RSConnect.
+
+We can deploy our model, which is strongly linked to the version we just pinned above. Note: this model is already deployed, so no need to run this chunk again, unless we want to update our model.
+
+```{python}
+connect_server = rsconnect.api.RSConnectServer(
+  url = rsc_url, 
+  api_key = api_key
+  )
+
+vetiver.deploy_rsconnect(
+    connect_server = connect_server, 
+    board = board, 
+    version="771",
+    pin_name = "isabel.zimmerman/superbowl_rf",
+    extra_files=["requirements.txt"]
+    )
+```
+
+With the model deployed, we can interact with the API endpoint as if it were a model in memory.
+
+```{python}
+connect_endpoint = vetiver_endpoint("https://colorado.posit.co/rsc/superbowl_vetiver_python/predict")
+
+response = vetiver.predict(data = X_test.head(5), endpoint = connect_endpoint)
+response
+```
+
+## Monitoring
+
+In both R and Python, vetiver offers helper functions `compute_metrics`, `plot_metrics`, and `pin_metrics` along with a template dashboard to show you monitoring capabilities.
+
+```{python}
+vetiver.monitoring_dashboard()
+```
+
